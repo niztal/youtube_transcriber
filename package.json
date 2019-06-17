@@ -24,7 +24,7 @@
   "homepage": "https://github.com/niztal/youtube_transcribe_parser#readme",
   "devDependencies": {
     "eslint": "^5.16.0",
-    "mocha": "^3.5.3",
+    "mocha": "^5.0.4",
     "nock": "^10.0.6"
   },
   "dependencies": {

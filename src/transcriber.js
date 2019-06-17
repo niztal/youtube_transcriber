@@ -1,8 +1,12 @@
 const axios = require('axios');
 var parseString = require('xml2js').parseString;
+const config = require('../config.js');
 
-const transcribe = async (videoUrl) => {
+const {youtubeBaseUrl, videoSuffixUrl} = config;
+
+const transcribe = async (videoId) => {
     let words = [];
+    const videoUrl = `${youtubeBaseUrl}${videoSuffixUrl}?v=${videoId}`;
     const response = await axios.get(videoUrl);
     parseString(response.data, (err, result) => {
         const {transcript} = result;

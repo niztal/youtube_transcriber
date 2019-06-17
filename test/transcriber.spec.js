@@ -1,16 +1,15 @@
 const assert = require('assert');
 const nock = require('nock');
-var path = require('path');
+const path = require('path');
+const config = require('../config.js');
 const transcribe = require('../src/transcriber.js');
 
 describe('youtube_transcriber', () => {
     it('can transcribe video', async () => {
 
         // Initialize
-        const youtubeBaseUrl = 'https://www.youtube.com';
-        const videoSuffixUrl = '/timedtext';
+        const {youtubeBaseUrl, videoSuffixUrl} = config;
         const videoId = 'someVideoId';
-        const videoUrl = `${youtubeBaseUrl}${videoSuffixUrl}?v=${videoId}`;
         nock(youtubeBaseUrl)
             .log(console.log)
             .get(videoSuffixUrl)
@@ -20,7 +19,7 @@ describe('youtube_transcriber', () => {
             .replyWithFile(200, path.join(__dirname, '/transcribe_examples/basic.xml'));
         
         // Execute
-        const transcription = await transcribe(videoUrl);
+        const transcription = await transcribe(videoId);
 
         // Assert
         assert(!!transcription);
