@@ -1,6 +1,7 @@
 const config = {
     youtubeBaseUrl: 'https://www.youtube.com',
-    videoSuffixUrl: '/timedtext'
+    videoSuffixUrl: '/api/timedtext',
+    defaultLanguage: 'en'
 }
 
 module.exports = config;
