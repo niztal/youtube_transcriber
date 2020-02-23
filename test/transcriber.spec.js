@@ -35,20 +35,20 @@ describe('youtube_transcriber', () => {
         // Assert
         assert(!!transcription);
         assert(!!transcription.language);
-        assert(!!transcription.words);
+        assert(!!transcription.terms);
         assert.equal("en", transcription.language);
-        assert.equal(transcription.words.length, 6);
-        assert.equal(transcription.words[0].start, 2.1)
-        assert.equal(transcription.words[0].value, "welcome")
-        assert.equal(transcription.words[1].start, 2.1)
-        assert.equal(transcription.words[1].value, "to")
-        assert.equal(transcription.words[2].start, 2.1)
-        assert.equal(transcription.words[2].value, "king's")
-        assert.equal(transcription.words[3].start, 2.1)
-        assert.equal(transcription.words[3].value, "landing")
-        assert.equal(transcription.words[4].start, 4)
-        assert.equal(transcription.words[4].value, "john")
-        assert.equal(transcription.words[5].start, 4)
-        assert.equal(transcription.words[5].value, "snow")
+        assert.equal(transcription.terms.length, 6);
+        assert.equal(transcription.terms[0].start, 2.1)
+        assert.equal(transcription.terms[0].value, "welcome")
+        assert.equal(transcription.terms[1].start, 2.1)
+        assert.equal(transcription.terms[1].value, "to")
+        assert.equal(transcription.terms[2].start, 2.1)
+        assert.equal(transcription.terms[2].value, "king's")
+        assert.equal(transcription.terms[3].start, 2.1)
+        assert.equal(transcription.terms[3].value, "landing")
+        assert.equal(transcription.terms[4].start, 4)
+        assert.equal(transcription.terms[4].value, "john")
+        assert.equal(transcription.terms[5].start, 4)
+        assert.equal(transcription.terms[5].value, "snow")
     });
 });
