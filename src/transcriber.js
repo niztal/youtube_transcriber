@@ -28,6 +28,8 @@ const transcribe = async (videoId) => {
     };
 }
 
+//TODO: add case where only one language exists no lang_default
+//see example https://www.youtube.com/api/timedtext?type=list&&v=s-2e7Bgqbb4
 const getDefaultTranscriptionLanguage = async (videoId) => {
     let defaultLanguage;
     const videoUrl = `${youtubeBaseUrl}${videoSuffixUrl}?type=list&&v=${videoId}`;

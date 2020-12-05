@@ -1,6 +1,6 @@
 {
   "name": "youtube_transcribe_parser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This node module aims to get as an input a link to youtube video and return as an output its transcribtion in a JSON format.",
   "main": "index.js",
   "scripts": {
