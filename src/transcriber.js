@@ -5,7 +5,7 @@ const config = require('../config.js');
 const {youtubeBaseUrl, videoSuffixUrl} = config;
 
 const transcribe = async (videoId) => {
-    let words = [];
+    let terms = [];
     const defaultLanguage = await getDefaultTranscriptionLanguage(videoId);
     const videoUrl = `${youtubeBaseUrl}${videoSuffixUrl}?v=${videoId}&&lang=${defaultLanguage.lang_code}`;
     const response = await axios.get(videoUrl);
@@ -15,7 +15,7 @@ const transcribe = async (videoId) => {
         text.forEach(sentence => {
             const {start} = sentence.$;
             sentence._.split(" ").forEach((w) => {
-                words.push({
+                terms.push({
                     start,
                     value: w.toLowerCase()
                 });
@@ -24,7 +24,7 @@ const transcribe = async (videoId) => {
     });
     return {
         language: defaultLanguage.lang_code,
-        words
+        terms
     };
 }
 
